@@ -1,3 +1,5 @@
+package OOPexamples;
+
 public class Car2 {
     private String make;
     private String model;

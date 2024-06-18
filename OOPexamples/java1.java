@@ -1,3 +1,5 @@
+package OOPexamples;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.*;
@@ -5,6 +7,7 @@ import java.util.ArrayList;
 
 public class java1 {
 
+   // add Better Comments Extension on vs code to make the comments colors work
    /* This is my first java program.
    ! Don't forget about comments
    ? can we make this faster?
