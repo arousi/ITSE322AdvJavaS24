@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
 
-public class Sqlite3 {
+public class Connectivity {
     public static void main(String args[]){
         Connection conn = null;
         try{

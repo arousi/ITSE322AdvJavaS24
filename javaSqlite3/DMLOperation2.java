@@ -2,6 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.sql.*;
 
+
 public class DMLOperation2 {
 
     static Connection createTableGetConn() throws SQLException {
