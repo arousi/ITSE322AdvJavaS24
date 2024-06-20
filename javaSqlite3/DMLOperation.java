@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class DMLOperation {
 
@@ -8,13 +10,12 @@ public class DMLOperation {
     try {
       Class.forName("org.sqlite.JDBC");
       connLink = DriverManager.getConnection("jdbc:sqlite:SqliteJavaDB.db");
-      System.out.println("DB Created/Connected successfuly");
+      System.out.println("\n[DB Created/Connected successfuly]");
     } catch (Exception er) {
       System.out.println("/nError");
       System.err.println(er.getClass().getName() + ":" + er.getMessage());
       System.exit(0);
     }
-    System.out.println("database successfully created");
     return connLink;
   }
 
@@ -32,7 +33,8 @@ public class DMLOperation {
     try {
       stmt = c.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM Product;");
-      System.out.println("==============================================");
+      System.out.println("===================================================");
+      System.out.println("===================================================");
       System.out.println("ID\t Name\t\t Price\t\t Qty "); /* Labels */
       while (rs.next()) {
         id = rs.getInt("p_id");
@@ -41,7 +43,7 @@ public class DMLOperation {
         price = rs.getFloat("price");
         /* Output */
         System.out.println(id + "\t " + name + " \t\t " + price + "\t\t " + quantity);
-        System.out.println("==============================================");
+        System.out.println("-------------------------------------------------");
       }
       rs.close();
     } catch (Exception e) {
@@ -55,6 +57,8 @@ public class DMLOperation {
         System.err.println("Error closing statement: " + e.getMessage());
       }
     }
+
+    System.out.println("===================================================");
   }
 
   public static void main(String args[]) {
@@ -64,12 +68,8 @@ public class DMLOperation {
         Connection c = null;
         Statement stmt = null;
 
-        System.out.println("Select DML Operation For Product Table...");
-        System.out.println("1. Insert");
-        System.out.println("2. Update");
-        System.out.println("3. Delete");
-        System.out.println("4. Select");
-        System.out.println("5. Exit");
+        System.out.println("Select DML Operation For Product Table..\n1. Insert\n"
+        +"2. Update\n3. Delete\n4. Select\n5. Exit");
 
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a choice between 1-6: ");
