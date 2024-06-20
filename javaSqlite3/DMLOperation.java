@@ -3,6 +3,21 @@ import java.sql.*;
 
 public class DMLOperation {
 
+  static Connection createTableGetConn(){
+    Connection connLink = null;
+        try{
+            Class.forName("org.sqlite.JDBC");
+            connLink = DriverManager.getConnection("jdbc:sqlite:SqliteJavaDB.db");
+            System.out.println("DB Created/Connected successfuly");
+        }catch(Exception er){
+            System.out.println("/nError");
+            System.err.println(er.getClass().getName() + ":" + er.getMessage());
+            System.exit(0);
+        }
+        System.out.println("database successfully created");
+        return connLink;
+  }
+
   static void printTableContent(Connection c) {
     Statement stmt = null;
     String name = "";
@@ -13,7 +28,7 @@ public class DMLOperation {
       stmt = c.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM Product;");
       System.out.println("==============================================");
-      System.out.println("ID\t Name\t\t Price\t Qty "); /*Labels */
+      System.out.println("ID\t Name\t\t Price\t\t Qty "); /*Labels */
       while (rs.next()) {
         id = rs.getInt("p_id");
         name = rs.getString("p_name");
@@ -48,13 +63,14 @@ public class DMLOperation {
       System.out.println("3. Delete");
       System.out.println("4. Select");
       System.out.println("5. Exit");
+      
       Scanner reader = new Scanner(System.in);
       System.out.println("Enter a choice between 1-6: ");
       int n = reader.nextInt();
 
       try {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection("jdbc:sqlite:SqliteJavaDB.db");
+        c = createTableGetConn();
         c.setAutoCommit(false);
         stmt = c.createStatement();
         String name = "", sql = "";
