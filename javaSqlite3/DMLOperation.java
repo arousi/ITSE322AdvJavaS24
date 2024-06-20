@@ -1,7 +1,5 @@
 import java.util.Scanner;
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 public class DMLOperation {
 
@@ -62,11 +60,14 @@ public class DMLOperation {
   }
 
   public static void main(String args[]) {
+    
     String flag = "Y";
     do {
       try {
         Connection c = null;
         Statement stmt = null;
+
+        DMLOperationGUI gui = new DMLOperationGUI(c);
 
         System.out.println("Select DML Operation For Product Table..\n1. Insert\n"
         +"2. Update\n3. Delete\n4. Select\n5. Exit");
