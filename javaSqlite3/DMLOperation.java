@@ -3,22 +3,27 @@ import java.sql.*;
 
 public class DMLOperation {
 
-  static Connection createTableGetConn(){
+  static Connection createTableGetConn() {
     Connection connLink = null;
-        try{
-            Class.forName("org.sqlite.JDBC");
-            connLink = DriverManager.getConnection("jdbc:sqlite:SqliteJavaDB.db");
-            System.out.println("DB Created/Connected successfuly");
-        }catch(Exception er){
-            System.out.println("/nError");
-            System.err.println(er.getClass().getName() + ":" + er.getMessage());
-            System.exit(0);
-        }
-        System.out.println("database successfully created");
-        return connLink;
+    try {
+      Class.forName("org.sqlite.JDBC");
+      connLink = DriverManager.getConnection("jdbc:sqlite:SqliteJavaDB.db");
+      System.out.println("DB Created/Connected successfuly");
+    } catch (Exception er) {
+      System.out.println("/nError");
+      System.err.println(er.getClass().getName() + ":" + er.getMessage());
+      System.exit(0);
+    }
+    System.out.println("database successfully created");
+    return connLink;
   }
 
   static void printTableContent(Connection c) {
+    // TODO
+    // todo make an interface of "Connection createTableGetConn()"
+    // todo to pass it to this function
+    // todo for better readability and performance,
+    // todo or maybe just readabilty and code lines?
     Statement stmt = null;
     String name = "";
     float price = 0.0f;
@@ -28,13 +33,14 @@ public class DMLOperation {
       stmt = c.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM Product;");
       System.out.println("==============================================");
-      System.out.println("ID\t Name\t\t Price\t\t Qty "); /*Labels */
+      System.out.println("ID\t Name\t\t Price\t\t Qty "); /* Labels */
       while (rs.next()) {
         id = rs.getInt("p_id");
         name = rs.getString("p_name");
         quantity = rs.getInt("quantity");
         price = rs.getFloat("price");
-        System.out.println(id + "\t " + name + " \t\t " + price + "\t\t " + quantity);/*Output */
+        /* Output */
+        System.out.println(id + "\t " + name + " \t\t " + price + "\t\t " + quantity);
         System.out.println("==============================================");
       }
       rs.close();
@@ -54,21 +60,21 @@ public class DMLOperation {
   public static void main(String args[]) {
     String flag = "Y";
     do {
-      Connection c = null;
-      Statement stmt = null;
-
-      System.out.println("Select DML Operation For Product Table...");
-      System.out.println("1. Insert");
-      System.out.println("2. Update");
-      System.out.println("3. Delete");
-      System.out.println("4. Select");
-      System.out.println("5. Exit");
-      
-      Scanner reader = new Scanner(System.in);
-      System.out.println("Enter a choice between 1-6: ");
-      int n = reader.nextInt();
-
       try {
+        Connection c = null;
+        Statement stmt = null;
+
+        System.out.println("Select DML Operation For Product Table...");
+        System.out.println("1. Insert");
+        System.out.println("2. Update");
+        System.out.println("3. Delete");
+        System.out.println("4. Select");
+        System.out.println("5. Exit");
+
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter a choice between 1-6: ");
+        int n = reader.nextInt();
+
         Class.forName("org.sqlite.JDBC");
         c = createTableGetConn();
         c.setAutoCommit(false);
@@ -150,9 +156,13 @@ public class DMLOperation {
         System.exit(0);
       }
       System.out.println("Continue Y OR N?");
-      reader = new Scanner(System.in);
+      Scanner reader = new Scanner(System.in);
       flag = reader.nextLine();
     } while (flag.equalsIgnoreCase("Y"));
     System.exit(0);
+    // reader.close();
+    /*
+     * reader inside the main function will close with its finish releasing RAM resources
+     */
   }
 }
