@@ -14,11 +14,11 @@ public class Me1SQLite3Java {
         System.out.println("Enter a choice between 1-6: ");
 
         Scanner scn = new Scanner(System.in);
-        int tempVar = reader.nextInt();
+        //int tempVar = reader.nextInt();
 
         try {
             Class.forName("org.sqlite.JDBC");
-            conlink = DataSource.class.GETCONNEC
+            //conlink = DataSource.class.GETCONNEC();
         } catch (Exception e) {
             // TODO: handle exception
         }
