@@ -104,7 +104,7 @@ public class DMLOperationGUI extends JFrame implements ActionListener {
                     float price = Float.parseFloat(priceField.getText());
                     int quantity = Integer.parseInt(quantityField.getText());
                     insertProduct(connection, name, price, quantity);
-                    outputTextArea.setText("Product Inserted Successfully!");
+                    outputTextArea.setText("Product Inserted Successfully!");//TODO doesn't print this to text area */
                     printTableContent(connection, outputTextArea); // Update table after insert
                     break;
                 case "Update":
