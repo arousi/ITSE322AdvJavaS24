@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.BorderLayout;
 import java.sql.ResultSet;
+
 //TODO Main connects to a DBConnection
 //TODO calls for GUI1Client
 //TODO calls for GUI2Server
