@@ -11,8 +11,7 @@ public class Server {
             System.out.println("Client connected.");
 
             // Create input and output streams for communication
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream()));
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
             // Read radius from the client

@@ -39,13 +39,13 @@ public class GUIClient {
         public void actionPerformed(ActionEvent e) {
             String serverAddress = "localhost";
             int serverPort = 12345;
-
+            //*This here is the client code */
+            //TODO should make it call the server file with some await
+            
             try {
                 Socket socket = new Socket(serverAddress, serverPort);
-
                 // Create input and output streams for communication
-                BufferedReader in = new BufferedReader(
-                        new InputStreamReader(socket.getInputStream()));
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
                 // Read radius from the text field
