@@ -39,9 +39,10 @@ public class GUIClient {
         public void actionPerformed(ActionEvent e) {
             String serverAddress = "localhost";
             int serverPort = 12345;
-            //*This here is the client code */
+            //*THIS HERE IS THE CLIENT CODE */
             //TODO should make it call the server file with some await
-            
+            //TODO make more readable mssgs in String and Int
+            //TODO make 3 buttons, 1 run clinet, 1 run server, 1 send input
             try {
                 Socket socket = new Socket(serverAddress, serverPort);
                 // Create input and output streams for communication
