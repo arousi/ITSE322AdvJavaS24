@@ -7,13 +7,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.BorderLayout;
 import java.sql.ResultSet;
+//TODO Main connects to a DBConnection
+//TODO calls for GUI1Client
+//TODO calls for GUI2Server
 
+//Todo GUI1Client.java starts the client and has I/O fields and CRUD buttons
+//Todo GUI2Server.java starts the server 
+
+//Todo Server.java wiill get conn from main then sends the data to GUI1Client
+//TODO 
 
 public class CRUDGUISerevrClient {
-    
-    
+    /*Connection c = null;
+    c = createTableGetConn();*/
+
+}
+
 
 /*
+
+
 private static class GUI{
 
 }
@@ -251,4 +264,3 @@ static void printTableContent(Connection c) {
         DMLOperationGUI gui = new DMLOperationGUI(c);
     }
 */
-}
