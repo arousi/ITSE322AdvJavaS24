@@ -12,13 +12,16 @@ import java.sql.ResultSet;
 //TODO calls for GUI1Client
 //TODO calls for GUI2Server
 
-//Todo GUI1Client.java starts the client and has I/O fields and CRUD buttons
-//Todo GUI2Server.java starts the server 
+//Todo GUI1Client.java starts with buton the client and has I/O fields and CRUD buttons
+//Todo GUI2Server.java starts the server with button
+//TODO server sends and recieves data from DB/Client
 
 //Todo Server.java wiill get conn from main then sends the data to GUI1Client
-//TODO 
 
 public class CRUDGUISerevrClient {
+    public static void main(String args[]){
+
+    }
     /*Connection c = null;
     c = createTableGetConn();*/
 
