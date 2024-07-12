@@ -6,6 +6,7 @@ public class Client {
         try {
             Socket socket = new Socket("localhost", 12345);
 
+            
             // Create input and output streams for communication
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);

@@ -14,11 +14,11 @@ public class Server {
             // prints after .accept(); becomes true
 
             // *Input Stream */
-            InputStreamReader in = new InputStreamReader(clientSock.getInputStream());
+            InputStreamReader inStream = new InputStreamReader(clientSock.getInputStream());
             // *Input Stream reads from Output Stream init in the Client */
 
             // *Buffer then takes the input from Istream to process it */
-            BufferedReader bufRead = new BufferedReader(in);
+            BufferedReader bufRead = new BufferedReader(inStream);
             String str = bufRead.readLine();
             // *str to store what the Buffere has read */
 
@@ -28,13 +28,13 @@ public class Server {
             System.out.println("Client says: " + str);
             // Print Client msg
 
-            PrintWriter pr = new PrintWriter(clientSock.getOutputStream(), true);
-            pr.println("Server says: Hi Im server");
+            PrintWriter prOutStream = new PrintWriter(clientSock.getOutputStream(), true);
+            prOutStream.println("Hi Im server");
 
-            bufRead.close();//!Close Buffer 1st
-            in.close();     //!Close InputStream 2nd
-            pr.close();     //!Close OutStream 3rd
-                            //!Sockets to be closed last
+            bufRead.close();      //!Close Buffer 1st
+            inStream.close();     //!Close InputStream 2nd
+            prOutStream.close();   //!Close OutStream 3rd
+                                    //!Sockets to be closed last
             clientSock.close();
             servSock.close();
 
