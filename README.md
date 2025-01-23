@@ -1,13 +1,18 @@
-This repo is created to ease the reach to the cousre content and codes for the students of SWE Dept, however to better learn the syllabus make sure to attend lectures and write each code of line
-by yourself, then google the parts of the code that you don't understand its reason to exist there
-finally tinker with the code and try to improve it, overengineer it, or maybe rewrite it with better/newer functuions
-this advice is given based on the fact that reading the code lines gives you the illusino that you have studied it and is prepared for the exam
-yet you aren't, and hope you take the advices in this Readme file srsly.
+# SWE Department Course ITSE322 Advance Programming in Java
 
+Welcome to the SWE Department course content repository! This repo is designed to make it easier for students to access course materials and code. However, to truly understand the syllabus, it's essential to attend lectures and write each line of code yourself. If you encounter parts of the code that you don't understand, make sure to Google them to learn why they exist.
 
-for any colaboration requests, make a fork, push to your branche the new content, mssg me on Tele @LibyaChmapion regarding the pull request, 
-main branch will be updated if your additions have value or improvments to the existing lectures or code files.
+Afterward, experiment with the code—try to improve it, overengineer it, or rewrite it using better or newer functions. This hands-on approach is crucial because simply reading the code can give you the illusion that you've studied it and are prepared for exams, but you might not be. Please take the advice in this README seriously.
 
+## Collaboration Requests
 
-GLHF and don't lose your sanity amidst your ambitions and doubts,
-hardworkers will always prevail thier anexiety, fears and stumbles
+For any collaboration requests:
+1. Fork this repository.
+2. Push your new content to your branch.
+3. Message me on Telegram @LibyaChampion regarding the pull request.
+
+The main branch will be updated if your additions provide value or improvements to the existing lectures or code files.
+
+## Final Thoughts
+
+Good luck and have fun! Don't lose your sanity amidst your ambitions and doubts. Hard workers will always overcome their anxiety, fears, and stumbles.
